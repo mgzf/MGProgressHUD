@@ -456,11 +456,14 @@ public class MGProgressHUD: UIView {
                 //                progressView.detailLabelColor = UIColor.whiteColor()
             }
             if icons != nil && icons?.count > 0 {
-                let  imageView = UIImageView(image: UIImage(named: (icons?.first)!))
+                let  imageView = UIImageView(image: image((icons?.first)!))
                 if icons?.count > 1 {
                     var arr  = [UIImage]()
                     for name in icons! {
-                        arr.append(UIImage(named: name)!)
+                        if let image = image(name) {
+                            
+                            arr.append(image)
+                        }
                     }
                     imageView.animationImages = arr
                 }
@@ -847,12 +850,21 @@ extension MGProgressHUD {
     }
     
     public class func  showErrorAndHiddenView(message:String?)->MGProgressHUD?{
-
         return self.showSuccessAndHiddenView(lastShowWindow(), icon: "error", message: message, detailText: nil)
     }
 }
 
 extension MGProgressHUD {
+    
+    class func image(name: String) -> UIImage? {
+        guard name.characters.count > 0 else {
+            return nil
+        }
+        let bundle = NSBundle(forClass: MGProgressHUD.self)
+        let image = UIImage(named: "MGHUD.bundle/" + name, inBundle: bundle, compatibleWithTraitCollection: nil)
+        return image
+
+    }
     class func lastShowWindow() -> UIWindow{
         var window = UIApplication.sharedApplication().windows.last
         let count = UIApplication.sharedApplication().windows.count
