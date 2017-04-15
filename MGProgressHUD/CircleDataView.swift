@@ -22,13 +22,13 @@ class CircleDataView: UIView {
             setNeedsDisplay()
         }
     }
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         // println("开始画画.........")
         
         
         //获取画图上下文
-        let context:CGContextRef = UIGraphicsGetCurrentContext()!;
+        let context:CGContext = UIGraphicsGetCurrentContext()!;
         
         
         //移动坐标
@@ -37,9 +37,9 @@ class CircleDataView: UIView {
         
         
         //第一段文本
-        let font:UIFont! = UIFont.systemFontOfSize(fontSize)
+        let font:UIFont! = UIFont.systemFont(ofSize: fontSize)
         let textAttributes: [String: AnyObject] = [
-            NSForegroundColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.black,
             NSFontAttributeName:font
         ]
         
@@ -55,30 +55,32 @@ class CircleDataView: UIView {
         let stry:CGFloat = y-(size.height/2)
         
         
-        str.drawAtPoint(CGPointMake(x-(size.width/2),stry))
+        str.draw(at: CGPoint(x: x-(size.width/2),y: stry))
         
         //灰色圆圈
         let radius = frame.size.width/2-lineSize
-        CGContextSetLineWidth(context, 1)
+        context.setLineWidth(1)
         
-        CGContextSetStrokeColorWithColor(context, UIColor.grayColor().CGColor)
-        CGContextAddArc(context, x, y, radius-lineSize + 1, 0, 360, 0)
-        CGContextDrawPath(context, .Stroke)
+        context.setStrokeColor(UIColor.gray.cgColor)
+        context.addArc(center: CGPoint(x: x, y: y), radius: radius-lineSize + 1, startAngle: 0, endAngle: 360, clockwise: false)
+        //        CGContextAddArc(context, x, y, radius-lineSize + 1, 0, 360, 0)
+        context.drawPath(using: .stroke)
         
         
         //两个圆圈
-        CGContextSetLineWidth(context, lineSize)
+        context.setLineWidth(lineSize)
         
-        CGContextSetStrokeColorWithColor(context, MGColor(125, g: 125, b: 125).CGColor)
-        CGContextAddArc(context, x, y, radius, 0, 360, 0)
-        CGContextDrawPath(context, .Stroke)
+        context.setStrokeColor(MGColor(125, g: 125, b: 125).cgColor)
+        context.addArc(center: CGPoint(x: x, y: y), radius: radius, startAngle: 0, endAngle: 360, clockwise: false)
+        //        CGContextAddArc(context, x, y, radius, 0, 360, 0)
+        context.drawPath(using: .stroke)
         
         //
-        CGContextSetStrokeColorWithColor(context,  MGColor(246, g: 80, b: 0).CGColor)
-        process  = process * CGFloat(M_PI/180.0)
-        CGContextAddArc(context, x, y, radius,CGFloat(-M_PI/2), process - CGFloat(M_PI/2), 0)
-        
-        CGContextDrawPath(context, .Stroke)
+        context.setStrokeColor(MGColor(246, g: 80, b: 0).cgColor)
+        process  = process * CGFloat(.pi/180.0)
+        //        CGContextAddArc(context, x, y, radius,CGFloat(-M_PI/2), process - CGFloat(M_PI/2), 0)
+        context.addArc(center: CGPoint(x: x, y: y), radius: radius, startAngle: CGFloat(-(CGFloat.pi)/2), endAngle: process - CGFloat(CGFloat.pi/2), clockwise: false)
+        context.drawPath(using: .stroke)
         
         
         // println("结束画画........")

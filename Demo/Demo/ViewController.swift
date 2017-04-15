@@ -20,15 +20,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func showTexAndHidden(sender: UIButton) {
+    @IBAction func showTexAndHidden(_ sender: UIButton) {
         MGProgressHUD.showTextAndHiddenView("测试啊")
     }
 
-    @IBAction func success(sender: AnyObject) {
+    @IBAction func success(_ sender: AnyObject) {
         MGProgressHUD.showSuccessAndHiddenView("成功")
     }
     
-    @IBAction func failed(sender: UIButton) {
+    @IBAction func failed(_ sender: UIButton) {
         MGProgressHUD.showErrorAndHiddenView("失败")
     }
     
