@@ -7,29 +7,6 @@
 //
 
 import UIKit
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
 
 
 let KScreenWidth = UIScreen.main.bounds.width
@@ -292,7 +269,7 @@ class MGProgressHUD: UIView {
             var customViewFitSize = CGSize(width: 0, height: 0)
             if let imageView = customView as? UIImageView
             {
-                if imageView.animationImages?.count > 0  {
+                if let count = imageView.animationImages?.count, count > 0  {
                     customViewFitSize = sizeToFit(imageView.animationImages![0].size, maxWidth: maxWidth - 10)
                 }
                 else if let image = imageView.image
@@ -316,7 +293,7 @@ class MGProgressHUD: UIView {
             contentSize = CGSize(width: contentWidth, height: contentSize.height + customViewFitSize.height)
         }
         
-        if title?.characters.count > 0 {
+        if let count = title?.characters.count, count > 0 {
             let top = contentSize.height == marginEdgeInsets.top ? CGFloat(0.0):CGFloat(10.0)
             let labelFitSize = label.sizeThatFits(CGSize(width: contentSize.width - 40, height: CGFloat.greatestFiniteMagnitude))
             if labelFitSize.width  <  customViewWidth + 50 && labelFitSize.width < contentSize.width - 30 &&  detailText?.characters.count == 0{
@@ -330,7 +307,7 @@ class MGProgressHUD: UIView {
                 contentSize = CGSize(width: labelFitSize.width + 50, height: contentSize.height)
             }
         }
-        if detailText?.characters.count > 0  {
+        if let count = detailText?.characters.count, count > 0  {
             let top = contentSize.height == marginEdgeInsets.top ? CGFloat(0.0):CGFloat(10.0)
             let detailLabelFitSize = detailLabel.sizeThatFits(CGSize(width: contentSize.width - 40, height: CGFloat.greatestFiniteMagnitude))
             if detailLabelFitSize.width  <  customViewWidth + 50 && detailLabelFitSize.width < contentSize.width - 30{
@@ -359,10 +336,10 @@ class MGProgressHUD: UIView {
         if customView != nil {
             customView!.center = CGPoint(x: contentSize.width/2, y: customView!.center.y)
         }
-        if  title?.characters.count > 0  {
+        if let count = title?.characters.count, count > 0  {
             label.center = CGPoint(x: contentSize.width/2, y: label.center.y)
         }
-        if detailText?.characters.count > 0  {
+        if let count = detailText?.characters.count, count > 0  {
             detailLabel.center = CGPoint(x: contentSize.width/2, y: detailLabel.center.y)
         }
     }
@@ -383,7 +360,7 @@ class MGProgressHUD: UIView {
      */
     func doAnimation(){
         //设置动画总时间
-        if let imageView = customView as? UIImageView, imageView.animationImages?.count > 0{
+        if let imageView = customView as? UIImageView, let count = imageView.animationImages?.count, count > 0{
             imageView.animationDuration = Double(imageView.animationImages!.count) * 0.025
             //设置重复次数,0表示不重复
             imageView.animationRepeatCount=0;
@@ -408,7 +385,7 @@ class MGProgressHUD: UIView {
      动画隐藏并移除
      */
     func stopAnimation(){
-        if let imageView = customView as? UIImageView, imageView.animationImages?.count > 0{
+        if let imageView = customView as? UIImageView, let count = imageView.animationImages?.count, count > 0{
             UIView.animate(withDuration: 0.3, animations: {
                 imageView.alpha = 0
             }, completion: { (boo) in
@@ -447,6 +424,7 @@ class MGProgressHUD: UIView {
      
      - returns: 返回当前对象
      */
+    @discardableResult
     class func showView(_ toView:UIView?,
                         icons:[String]?,
                         message:String?,
@@ -479,9 +457,9 @@ class MGProgressHUD: UIView {
                 //                progressView.labelColor = UIColor.whiteColor()
                 //                progressView.detailLabelColor = UIColor.whiteColor()
             }
-            if icons != nil && icons?.count > 0 {
+            if icons != nil && icons!.count > 0 {
                 let  imageView = UIImageView(image: UIImage(named: (icons?.first)!))
-                if icons?.count > 1 {
+                if let count = icons?.count, count > 1 {
                     var arr  = [UIImage]()
                     for name in icons! {
                         arr.append(UIImage(named: name)!)
@@ -527,6 +505,7 @@ class MGProgressHUD: UIView {
      
      - returns: 返回当前对象
      */
+    @discardableResult
     class func showCustomView(_ toView:UIView?,
                               customView:UIView?,
                               message:String?,
@@ -652,6 +631,7 @@ class MGProgressHUD: UIView {
      - parameter toView:     在哪个页面上加的
      - parameter animated:   是否动画隐藏
      */
+    @discardableResult
     class func hiddenAllhubToView(_ toView:UIView!,animated:Bool)->Int{
         var count = 0
         if toView != nil {
@@ -672,6 +652,7 @@ class MGProgressHUD: UIView {
      - parameter animated:    是否有动画
      - parameter afterDelay:  需不需要延迟
      */
+    
     class func hiddenHubView(_ progressHUD:MGProgressHUD!,animated:Bool,afterDelay:TimeInterval){
         progressHUD.hideAfterDelay(animated, afterDelay: afterDelay)
     }
@@ -687,8 +668,9 @@ extension MGProgressHUD {
      
      - returns: <#return value description#>
      */
+    @discardableResult
     class func  showMessageView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        if message?.characters.count > 0 {
+        if let count = message?.characters.count, count > 0 {
             let progressView = showView(toView, icons: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
@@ -705,6 +687,7 @@ extension MGProgressHUD {
      
      - returns: <#return value description#>
      */
+    @discardableResult
     class func  showLoadingView(_ toView:UIView!,message:String?)->MGProgressHUD?{
         var arr  = [String]()
         for index in 1..<10 {
@@ -723,6 +706,7 @@ extension MGProgressHUD {
      
      - returns: <#return value description#>
      */
+    @discardableResult
     class func  showProgressLoadingView(_ toView:UIView!,message:String?)->MGProgressHUD?{
         let progressView = MGProgressHUD.showView(toView, icons: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
         progressView?.customMode = MGCustomMode.progress
@@ -737,8 +721,9 @@ extension MGProgressHUD {
      
      - returns: <#return value description#>
      */
+    @discardableResult
     class func  showTextAndHiddenView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        if message?.characters.count > 0 {
+        if let count = message?.characters.count, count > 0 {
             let progressView = showView(toView, icons: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
@@ -759,8 +744,9 @@ extension MGProgressHUD {
      
      - returns: <#return value description#>
      */
+    @discardableResult
     class func  showTextAndHiddenView(_ toView:UIView!,message:String?,loationMode:MGLocationMode?)->MGProgressHUD?{
-        if message?.characters.count > 0 {
+        if let count = message?.characters.count, count > 0 {
             let progressView = showView(toView, icons: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: loationMode)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
@@ -774,6 +760,7 @@ extension MGProgressHUD {
     }
     
     /*! 扩展方法 */
+    @discardableResult
     class func  showView(_ toView:UIView!,
                          icon:String?,
                          message:String?,
@@ -781,7 +768,7 @@ extension MGProgressHUD {
                          detailText:String?,
                          detailColor:UIColor?) ->MGProgressHUD? {
         var icons = [String]()
-        if icon?.characters.count > 0 {
+        if let count = icon?.characters.count, count > 0 {
             icons.append(icon!)
         }
         let progressView = showView(toView, icons: icons, message: message, messageColor: messageColor, showBgView: true, detailText: detailText, detailColor: detailColor, loationMode: nil)
@@ -789,6 +776,7 @@ extension MGProgressHUD {
         return progressView
     }
     /*! 扩展方法 */
+    @discardableResult
     class func  showView(_ toView:UIView!,
                          customView:UIView?,
                          message:String?,
@@ -798,6 +786,7 @@ extension MGProgressHUD {
         return showCustomView(toView, customView: customView, message: message, messageColor: messageColor, showBgView: true, detailText: detailText, detailColor: detailColor, loationMode: nil)
     }
     /*! 扩展方法 */
+    @discardableResult
     class func  showView(_ toView:UIView!,
                          icon:String?,
                          message:String?,
@@ -806,6 +795,7 @@ extension MGProgressHUD {
         return showView(toView, icon: icon, message: message, messageColor: nil, detailText: detailText, detailColor: nil)
     }
     /*! 扩展方法 */
+    @discardableResult
     class func  showFillView(_ toView:UIView!,
                                icon:String?,
                             message:String?,
@@ -816,6 +806,7 @@ extension MGProgressHUD {
     }
 
     /*! 扩展方法 */
+    @discardableResult
     class func  showView(_ toView:UIView!,
                          customView:UIView?,
                          message:String?,
@@ -823,14 +814,15 @@ extension MGProgressHUD {
         return showView(toView, customView: customView, message: message, messageColor: nil, detailText: detailText, detailColor: nil)
     }
     
+    @discardableResult
     class func showTextAndHiddenView(_ message:String?)->MGProgressHUD? {
-        if message?.characters.count > 0 {
+        if let count = message?.characters.count, count > 0 {
             let progressView = showTextAndHiddenView(lastShowWindow(), message: message)
             return progressView
         }
         return nil
     }
-    
+    @discardableResult
     class func hiddenHUD(_ animated:Bool)->Int{
         var count = 0
         for view in lastShowWindow().subviews {
@@ -841,13 +833,13 @@ extension MGProgressHUD {
         }
         return count
     }
-    
+    @discardableResult
     class func showSuccessAndHiddenView(_ toView:UIView!,
                                         icon:String?,
                                         message:String?,
                                         detailText:String?) ->MGProgressHUD? {
         var icons = [String]()
-        if icon?.characters.count > 0 {
+        if let count = icon?.characters.count, count > 0 {
             icons.append(icon!)
         }
         let progressView = showView(toView, icons: icons, message: message, messageColor: nil, showBgView: false, detailText: detailText, detailColor: nil, loationMode: nil)
@@ -857,20 +849,21 @@ extension MGProgressHUD {
         progressView?.hideAfterDelay(true, afterDelay: 1.5)
         return progressView
     }
-    
+    @discardableResult
     class func  showSuccessAndHiddenView(_ toView:UIView!,message:String?)->MGProgressHUD?{
         return self.showSuccessAndHiddenView(toView, icon: "ic_whiteCheck", message: message, detailText: nil)
     }
     
+    @discardableResult
     class func  showSuccessAndHiddenView(_ message:String?)->MGProgressHUD?{
 
         return self.showSuccessAndHiddenView(lastShowWindow(), icon: "ic_whiteCheck", message: message, detailText: nil)
     }
-    
+    @discardableResult
     class func  showErrorAndHiddenView(_ toView:UIView!,message:String?)->MGProgressHUD?{
         return self.showSuccessAndHiddenView(toView, icon: "error", message: message, detailText: nil)
     }
-    
+    @discardableResult
     class func  showErrorAndHiddenView(_ message:String?)->MGProgressHUD?{
 
         return self.showSuccessAndHiddenView(lastShowWindow(), icon: "error", message: message, detailText: nil)
