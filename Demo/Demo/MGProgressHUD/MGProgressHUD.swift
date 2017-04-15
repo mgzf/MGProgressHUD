@@ -619,6 +619,7 @@ class MGProgressHUD: UIView {
      - parameter animated:   是否动画隐藏
      - parameter afterDelay: 几秒后隐藏
      */
+    @discardableResult
     class func hiddenAllhubToView(_ toView:UIView!,animated:Bool,afterDelay:TimeInterval)->Int{
         var count = 0
         if toView != nil {
