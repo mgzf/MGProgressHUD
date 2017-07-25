@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGProgressHUD"
-  s.version      = "2.1.3"
+  s.version      = "2.1.4"
   s.summary      = "蘑菇租房正在使用的ProgressHUD。"
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                       蘑菇租房自定义正在使用的ProgressHUD，包括常用的HUD功能。
                    DESC
 
-  s.homepage     = "https://www.mgzf.com"
+  s.homepage     = "http://www.mgzf.com"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
