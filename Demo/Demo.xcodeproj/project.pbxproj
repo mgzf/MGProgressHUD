@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		273BDD501F25F17C008B3590 /* MGProgressHUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273BDD4F1F25F17C008B3590 /* MGProgressHUDTool.swift */; };
+		27D00F441F28827C000699AE /* 空数据@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D00F421F28827C000699AE /* 空数据@2x.png */; };
+		27D00F451F28827C000699AE /* 空数据@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D00F431F28827C000699AE /* 空数据@3x.png */; };
 		95193A4A1E5452CB00DB5158 /* CircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95193A431E5452CB00DB5158 /* CircleDataView.swift */; };
 		95193A4B1E5452CB00DB5158 /* MGProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95193A441E5452CB00DB5158 /* MGProgressHUD.swift */; };
 		95193A4C1E5452CB00DB5158 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193A461E5452CB00DB5158 /* error@2x.png */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		273BDD4F1F25F17C008B3590 /* MGProgressHUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGProgressHUDTool.swift; sourceTree = "<group>"; };
+		27D00F421F28827C000699AE /* 空数据@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空数据@2x.png"; sourceTree = "<group>"; };
+		27D00F431F28827C000699AE /* 空数据@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空数据@3x.png"; sourceTree = "<group>"; };
 		95193A431E5452CB00DB5158 /* CircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataView.swift; sourceTree = "<group>"; };
 		95193A441E5452CB00DB5158 /* MGProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGProgressHUD.swift; sourceTree = "<group>"; };
 		95193A461E5452CB00DB5158 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		95193A451E5452CB00DB5158 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				27D00F421F28827C000699AE /* 空数据@2x.png */,
+				27D00F431F28827C000699AE /* 空数据@3x.png */,
 				95193A501E5453B200DB5158 /* ic_whiteCheck@2x.png */,
 				95193A511E5453B200DB5158 /* ic_whiteCheck@3x.png */,
 				95193A461E5452CB00DB5158 /* error@2x.png */,
@@ -161,12 +167,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9527FEB51D22722F00F0355A /* LaunchScreen.storyboard in Resources */,
+				27D00F451F28827C000699AE /* 空数据@3x.png in Resources */,
 				95193A4D1E5452CB00DB5158 /* error@3x.png in Resources */,
 				9527FEB21D22722F00F0355A /* Assets.xcassets in Resources */,
 				95193A521E5453B200DB5158 /* ic_whiteCheck@2x.png in Resources */,
 				9527FEB01D22722F00F0355A /* Main.storyboard in Resources */,
 				95193A531E5453B200DB5158 /* ic_whiteCheck@3x.png in Resources */,
 				95193A4C1E5452CB00DB5158 /* error@2x.png in Resources */,
+				27D00F441F28827C000699AE /* 空数据@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
