@@ -21,6 +21,7 @@
 		E4109D641F2AD19000B0A2F1 /* ic_whiteCheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4109D5B1F2AD19000B0A2F1 /* ic_whiteCheck@3x.png */; };
 		E4109D651F2AD19000B0A2F1 /* 空数据@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4109D5C1F2AD19000B0A2F1 /* 空数据@2x.png */; };
 		E4109D661F2AD19000B0A2F1 /* 空数据@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4109D5D1F2AD19000B0A2F1 /* 空数据@3x.png */; };
+		E4109D6B1F2AE49100B0A2F1 /* MGProgressHUD.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E4109D6A1F2AE49100B0A2F1 /* MGProgressHUD.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E4109D5B1F2AD19000B0A2F1 /* ic_whiteCheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_whiteCheck@3x.png"; sourceTree = "<group>"; };
 		E4109D5C1F2AD19000B0A2F1 /* 空数据@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空数据@2x.png"; sourceTree = "<group>"; };
 		E4109D5D1F2AD19000B0A2F1 /* 空数据@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空数据@3x.png"; sourceTree = "<group>"; };
+		E4109D6A1F2AE49100B0A2F1 /* MGProgressHUD.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MGProgressHUD.podspec; path = ../../MGProgressHUD.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		9527FEA91D22722F00F0355A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E4109D6A1F2AE49100B0A2F1 /* MGProgressHUD.podspec */,
 				E4109D531F2AD19000B0A2F1 /* MGProgressHUD */,
 				9527FEAA1D22722F00F0355A /* AppDelegate.swift */,
 				9527FEAC1D22722F00F0355A /* ViewController.swift */,
@@ -174,6 +177,7 @@
 				E4109D631F2AD19000B0A2F1 /* ic_whiteCheck@2x.png in Resources */,
 				9527FEB01D22722F00F0355A /* Main.storyboard in Resources */,
 				E4109D641F2AD19000B0A2F1 /* ic_whiteCheck@3x.png in Resources */,
+				E4109D6B1F2AE49100B0A2F1 /* MGProgressHUD.podspec in Resources */,
 				E4109D611F2AD19000B0A2F1 /* error@2x.png in Resources */,
 				E4109D651F2AD19000B0A2F1 /* 空数据@2x.png in Resources */,
 			);
