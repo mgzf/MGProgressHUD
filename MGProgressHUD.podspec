@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                       蘑菇租房自定义正在使用的ProgressHUD，包括常用的HUD功能。
                    DESC
 
-  s.homepage     = "https://www.mgzf.com"
+  s.homepage     = "https://github.com/mgzf/MGProgressHUD"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
