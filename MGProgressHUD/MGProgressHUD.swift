@@ -142,11 +142,9 @@ open class MGProgressHUD: UIView {
     /*! manualHidden为true时 调用hiddenAllhubToView时不会消失 只有手动调用hiddenHubView*/
     public var manualHidden = false
     
-    
-    /*! 类内使用属性 */
-    fileprivate var contentView:UIView!
-    fileprivate var label:UILabel!
-    fileprivate var detailLabel:UILabel!
+    public var contentView:UIView!
+    public var label:UILabel!
+    public var detailLabel:UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
