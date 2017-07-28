@@ -645,26 +645,6 @@ extension MGProgressHUD {
         }
         return nil
     }
-    /**
-     显示信息,不会自动隐藏 只有手动隐藏额
-     
-     - parameter toView:  <#toView description#>
-     - parameter message: <#message description#>
-     
-     - returns: <#return value description#>
-     */
-    @discardableResult
-    public class func  showLoadingView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        var arr  = [String]()
-        for index in 1..<36 {
-            arr.append("loading" + String(index))
-        }
-        let progressView = MGProgressHUD.showView(toView, icons: arr, message: " ", messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
-        progressView?.contentView.layer.shadowOpacity = 0
-        progressView?.contentView.backgroundColor = UIColor.clear
-        progressView?.contentView.layer.borderWidth = 0
-        return progressView
-    }
     
     /**
      显示信息,不会自动隐藏 只有手动隐藏额
@@ -782,17 +762,6 @@ extension MGProgressHUD {
         let progressView = showView(toView, icon: icon, message: message, messageColor: nil, detailText: detailText, detailColor: nil)
         progressView?.backgroundColor = toView.backgroundColor
         progressView?.completionBlock = callBack
-        return progressView
-    }
-
-    @discardableResult
-    public class func  showLoadingFillView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        var arr  = [String]()
-        for index in 1..<36 {
-            arr.append("loading" + String(index))
-        }
-        let progressView = MGProgressHUD.showView(toView, icons: arr, message: message, messageColor: nil, showBgView: true, detailText: nil, detailColor: nil, loationMode: nil)
-        progressView?.backgroundColor = toView.backgroundColor
         return progressView
     }
     
