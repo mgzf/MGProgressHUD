@@ -20,7 +20,7 @@ import UIKit
 open class MGProgressHUD: UIView {
     
     /*! title对齐方式 默认居中对齐 */
-    var labelAlignment = NSTextAlignment.center {
+    public var labelAlignment = NSTextAlignment.center {
         didSet{
             if label != nil {
                 label.textAlignment = labelAlignment
@@ -28,7 +28,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! detailText对齐方式 默认居中对齐 */
-    var detailLabelAlignment = NSTextAlignment.center {
+    public var detailLabelAlignment = NSTextAlignment.center {
         didSet{
             if detailLabel != nil {
                 detailLabel.textAlignment = detailLabelAlignment
@@ -36,7 +36,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! title的颜色 */
-    var labelColor:UIColor? = MGColor(90, g: 90, b: 90) {
+    public var labelColor:UIColor? = MGColor(90, g: 90, b: 90) {
         didSet{
             if label != nil {
                 label.textColor = labelColor
@@ -44,7 +44,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! detailText的颜色 */
-    var detailLabelColor:UIColor? = MGColor(102, g: 102, b: 102) {
+    public var detailLabelColor:UIColor? = MGColor(102, g: 102, b: 102) {
         didSet{
             if detailLabel != nil {
                 detailLabel.textColor = detailLabelColor
@@ -52,7 +52,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! title的字体大小 */
-    var labelFont = UIFont.systemFont(ofSize: 13) {
+    public var labelFont = UIFont.systemFont(ofSize: 13) {
         didSet{
             if label != nil {
                 label.font = labelFont
@@ -60,7 +60,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! detailText的颜色 */
-    var detailLabelFont = UIFont.systemFont(ofSize: 13){
+    public var detailLabelFont = UIFont.systemFont(ofSize: 13){
         didSet{
             if detailLabel != nil {
                 detailLabel.font = detailLabelFont
@@ -69,7 +69,7 @@ open class MGProgressHUD: UIView {
     }
     
     /*! title */
-    var title:String? = ""{
+    public var title:String? = ""{
         didSet{
             if label != nil {
                 //                label.text = title
@@ -78,7 +78,7 @@ open class MGProgressHUD: UIView {
         }
     }
     /*! detailText */
-    var detailText:String? = ""{
+    public var detailText:String? = ""{
         didSet{
             if detailLabel != nil {
                 //                detailLabel.text = detailText
@@ -88,7 +88,7 @@ open class MGProgressHUD: UIView {
     }
     
     /*! 设置title上面的View */
-    var  customView:UIView?{
+    public var  customView:UIView?{
         didSet{
             if customView != nil {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectCustomViewTap))
@@ -99,21 +99,21 @@ open class MGProgressHUD: UIView {
     }
     
     /*! 设置最小边距边缘值() */
-    var marginEdgeInsets:UIEdgeInsets = UIEdgeInsets(top: 13, left: 40, bottom: 10, right: 40) {
+    public var marginEdgeInsets:UIEdgeInsets = UIEdgeInsets(top: 13, left: 40, bottom: 10, right: 40) {
         didSet{
             layoutSubviews()
         }
     }
     
     /*! content显示出来的位置 */
-    var locationMode:MGLocationMode? = MGLocationMode.center{
+    public var locationMode:MGLocationMode? = MGLocationMode.center{
         didSet{
             layoutSubviews()
         }
     }
     
     /*! content显示出来的位置 */
-    var customMode:MGCustomMode? = MGCustomMode.default{
+    public var customMode:MGCustomMode? = MGCustomMode.default{
         didSet{
             if customMode == MGCustomMode.progress {
                 let view1 = CircleDataView(frame:CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -125,7 +125,7 @@ open class MGProgressHUD: UIView {
         }
     }
     
-    var progress:CGFloat = 0 {
+    public var progress:CGFloat = 0 {
         didSet{
             if let circleDataView = self.customView as? CircleDataView {
                 circleDataView.progress = progress*100
@@ -134,13 +134,13 @@ open class MGProgressHUD: UIView {
     }
     
     /*! 点击背景后的回调 */
-    var completionBlock : (() ->())!
+    public var completionBlock : (() ->())!
     
     /*! 点击背景后的回调 */
-    var selectCustomViewBlock : (() ->())!
+    public var selectCustomViewBlock : (() ->())!
     
     /*! manualHidden为true时 调用hiddenAllhubToView时不会消失 只有手动调用hiddenHubView*/
-    var manualHidden = false
+    public var manualHidden = false
     
     
     /*! 类内使用属性 */
