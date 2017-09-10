@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGProgressHUD"
-  s.version      = "2.1.10"
+  s.version      = "2.1.11"
   s.summary      = "蘑菇租房正在使用的ProgressHUD。"
 
   # This description is used to generate tags and improve search results.
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = ["*.png", "*.md"]
-  s.resources = 'MGProgressHUD/Assets/*.png'
+  s.resources = 'MGProgressHUD/Assets/*.bundle'
   # s.resource_bundles = {
   #   'MGHUD' => ["MGProgressHUD/Res/*.png"]
   # }
