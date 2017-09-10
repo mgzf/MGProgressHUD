@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("UIImage:\(UIImage(named:"error.png"))")
+//        print("UIImage:\(UIImage(named:"error.png"))")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -64,7 +64,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
         case 2:
             MGProgressHUD.showErrorAndHiddenView("失败")
         case 3:
-            MGProgressHUD.showView(view, icon: "空数据", message: "页面载入失败咯", detailText: "")
+            MGProgressHUD.showView(view, icon: "111", message: "页面载入失败咯", detailText: "")
         case 4:
             MGProgressHUD.hiddenAllhubToView(view, animated: true)
         default:
