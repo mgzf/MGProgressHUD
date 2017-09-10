@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MGProgressHUD/*.swift"
+  s.source_files  = "MGProgressHUD/**/*.swift"
   # s.exclude_files = "MGProgressHUD/res"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -107,9 +107,10 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = ["*.png", "*.md"]
-  s.resource_bundles = {
-    'MGHUD' => ["MGProgressHUD/Res/*.png"]
-  }
+  s.resources = 'MGProgressHUD/Res/*.png'
+  # s.resource_bundles = {
+  #   'MGHUD' => ["MGProgressHUD/Res/*.png"]
+  # }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
