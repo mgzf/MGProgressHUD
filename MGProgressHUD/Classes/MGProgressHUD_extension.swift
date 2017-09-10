@@ -9,6 +9,33 @@
 import UIKit
 
 public extension MGProgressHUD {
+    @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
+    @discardableResult
+    public class func showView(_ toView:UIView?,
+                               icons:[String]?,
+                               message:String?,
+                               messageColor:UIColor?,
+                               showBgView:Bool?,
+                               detailText:String?,
+                               detailColor:UIColor?,
+                               loationMode:MGLocationMode?) -> MGProgressHUD?{
+     
+        var iconImages: [UIImage]?
+        if let `icons` = icons {
+            iconImages = icons.flatMap({ (imageName) -> UIImage? in
+                return UIImage(named: imageName)
+            })
+        }
+        
+        return showView(toView,
+                        iconImages: iconImages,
+                        message: message,
+                        messageColor: messageColor,
+                        showBgView: showBgView,
+                        detailText: detailText,
+                        detailColor: detailColor,
+                        loationMode: loationMode)
+    }
     
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     @discardableResult
