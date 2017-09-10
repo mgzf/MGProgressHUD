@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MGProgressHUD
 
 class ViewController: UIViewController {
 
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("UIImage:\(UIImage(named:"error.png"))")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

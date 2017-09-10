@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  UseWKWebKit
+//  MGProgressHUD
 //
-//  Created by Winann on 16/6/28.
-//  Copyright © 2016年 Winann. All rights reserved.
+//  Created by spf on 09/10/2017.
+//  Copyright (c) 2017 spf. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        NSURLProtocol.registerClass(MyURLProtocol)
         return true
     }
 

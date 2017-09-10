@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGProgressHUD"
-  s.version      = "2.1.9"
+  s.version      = "2.1.10"
   s.summary      = "蘑菇租房正在使用的ProgressHUD。"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MGProgressHUD/**/*.swift"
+  s.source_files  = "MGProgressHUD/Classes/**/*.swift"
   # s.exclude_files = "MGProgressHUD/res"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = ["*.png", "*.md"]
-  s.resources = 'MGProgressHUD/Res/*.png'
+  s.resources = 'MGProgressHUD/Assets/*.png'
   # s.resource_bundles = {
   #   'MGHUD' => ["MGProgressHUD/Res/*.png"]
   # }

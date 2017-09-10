@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9527FEA61D22722F00F0355A"
-               BuildableName = "Demo.app"
-               BlueprintName = "Demo"
-               ReferencedContainer = "container:Demo.xcodeproj">
+               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+               BuildableName = "MGProgressHUD_Example.app"
+               BlueprintName = "MGProgressHUD_Example"
+               ReferencedContainer = "container:MGProgressHUD.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "MGProgressHUD_Tests.xctest"
+               BlueprintName = "MGProgressHUD_Tests"
+               ReferencedContainer = "container:MGProgressHUD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +42,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "MGProgressHUD_Tests.xctest"
+               BlueprintName = "MGProgressHUD_Tests"
+               ReferencedContainer = "container:MGProgressHUD.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9527FEA61D22722F00F0355A"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
-            ReferencedContainer = "container:Demo.xcodeproj">
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "MGProgressHUD_Example.app"
+            BlueprintName = "MGProgressHUD_Example"
+            ReferencedContainer = "container:MGProgressHUD.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +79,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9527FEA61D22722F00F0355A"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
-            ReferencedContainer = "container:Demo.xcodeproj">
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "MGProgressHUD_Example.app"
+            BlueprintName = "MGProgressHUD_Example"
+            ReferencedContainer = "container:MGProgressHUD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9527FEA61D22722F00F0355A"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
-            ReferencedContainer = "container:Demo.xcodeproj">
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "MGProgressHUD_Example.app"
+            BlueprintName = "MGProgressHUD_Example"
+            ReferencedContainer = "container:MGProgressHUD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
