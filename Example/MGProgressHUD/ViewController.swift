@@ -24,7 +24,8 @@ class ViewController: UIViewController {
                                            "showSuccessAndHiddenView",
                                            "showErrorAndHiddenView",
                                            "showView",
-                                           "hiddenAll"]
+                                           "hiddenAll",
+                                           "showDelayText"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +65,11 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
         case 2:
             MGProgressHUD.showErrorAndHiddenView("失败")
         case 3:
-            MGProgressHUD.showView(view, icon: "111", message: "页面载入失败咯", detailText: "")
+            MGProgressHUD.showView(view, iconImage: nil, message: "页面载入失败咯", detailText: "")
         case 4:
             MGProgressHUD.hiddenAllhubToView(view, animated: true)
+        case 5:
+            MGProgressHUD.showTextAndHiddenView("延迟了3s 消失", afterDelay: 3)
         default:
             return
         }

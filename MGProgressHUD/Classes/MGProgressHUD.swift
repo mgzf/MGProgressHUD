@@ -833,4 +833,30 @@ extension MGProgressHUD {
         let image = UIImage(named: "error", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
         return self.showSuccessAndHiddenView(lastShowWindow(), iconImage:image, message: message, detailText: nil)
     }
+    
+    @discardableResult
+    public class func  showTextAndHiddenView(_ message:String?,afterDelay:TimeInterval)->MGProgressHUD?{
+        var window = UIApplication.shared.windows.last
+        if window?.isHidden == true {
+            window = UIApplication.shared.keyWindow
+        }
+        if let count = message?.characters.count, count > 0 {
+            let progressView = showTextAndHiddenView(window, message: message,afterDelay:afterDelay)
+            return progressView
+        }
+        return nil
+    }
+    
+    @discardableResult
+    public class func  showTextAndHiddenView(_ toView:UIView!,message:String?,loationMode:MGLocationMode = .center,afterDelay:TimeInterval)->MGProgressHUD?{
+        if let count = message?.characters.count, count > 0 {
+            let progressView = showView(toView, iconImages: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: loationMode)
+            progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
+            progressView?.labelColor = UIColor.white
+            progressView?.contentView.layer.borderColor = UIColor.black.cgColor
+            progressView?.hideAfterDelay(true, afterDelay:afterDelay)
+            return progressView
+        }
+        return nil
+    }
 }

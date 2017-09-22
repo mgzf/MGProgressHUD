@@ -22,7 +22,7 @@ pod 'MGProgressHUD'
 
 ## Author
 
-spf, sya@mogoroom.com
+spf, Winann
 
 ## License
 
