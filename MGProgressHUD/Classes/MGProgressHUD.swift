@@ -427,7 +427,6 @@ open class MGProgressHUD: UIView {
                 imageView.backgroundColor = UIColor.clear
                 progressView.contentView.addSubview(imageView)
                 progressView.customView = imageView
-                progressView.customView?.isUserInteractionEnabled = false
             }
             
             if loationMode != nil {

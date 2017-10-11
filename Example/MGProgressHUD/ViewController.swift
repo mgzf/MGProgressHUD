@@ -65,7 +65,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
         case 2:
             MGProgressHUD.showErrorAndHiddenView("失败")
         case 3:
-            MGProgressHUD.showView(view, iconImage: nil, message: "页面载入失败咯", detailText: "")
+            MGProgressHUD.showView(view, iconImage: UIImage(named: "111"), message: "页面载入失败咯", detailText: "")
         case 4:
             MGProgressHUD.hiddenAllhubToView(view, animated: true)
         case 5:
