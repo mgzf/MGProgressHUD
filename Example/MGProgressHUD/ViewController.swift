@@ -25,10 +25,24 @@ class ViewController: UIViewController {
                                            "showErrorAndHiddenView",
                                            "showView",
                                            "hiddenAll",
-                                           "showDelayText"]
+                                           "showDelayText",
+                                           "showLoading",
+                                           "showFillLoading"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var images = [UIImage]()
+        for i in 1...36 {
+            images.append(UIImage(named: "loading\(i)")!)
+        }
+
+        MGProgressConfiguration.shared.config { () -> [UIImage]? in
+            return images
+        }
+        
+//        print(MGProgressConfiguration.shared.images()?.count)
+        
         
 //        print("UIImage:\(UIImage(named:"error.png"))")
         // Do any additional setup after loading the view, typically from a nib.
@@ -70,6 +84,10 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
             MGProgressHUD.hiddenAllhubToView(view, animated: true)
         case 5:
             MGProgressHUD.showTextAndHiddenView("延迟了3s 消失", afterDelay: 3)
+        case 6:
+            MGProgressHUD.showLoadingView(self.view, message: "加载中")
+        case 7:
+            MGProgressHUD.showLoadingFillView(self.view, message: "加载中")
         default:
             return
         }
