@@ -61,6 +61,7 @@ public extension MGProgressHUD {
             detailColor: nil,
             loationMode: nil)
         progressView?.backgroundColor = toView.backgroundColor
+        progressView?.marginEdgeInsets = UIEdgeInsets(top: 5, left: UIScreen.main.bounds.width / 2 - 50, bottom: 5, right: UIScreen.main.bounds.width / 2 - 50)
         return progressView
     }
     

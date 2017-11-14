@@ -32,14 +32,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var images = [UIImage]()
-//        for i in 1...36 {
-//            images.append(UIImage(named: "loading\(i)")!)
-//        }
-//
-//        MGProgressConfiguration.shared.config { () -> [UIImage]? in
-//            return images
-//        }
+        var images = [UIImage]()
+        for i in 1...36 {
+            images.append(UIImage(named: "loading\(i)")!)
+        }
+
+        MGProgressConfiguration.shared.config { () -> [UIImage]? in
+            return images
+        }
         
 //        print(MGProgressConfiguration.shared.images()?.count)
         
