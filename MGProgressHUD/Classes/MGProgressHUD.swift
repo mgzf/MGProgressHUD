@@ -255,21 +255,21 @@ open class MGProgressHUD: UIView {
             contentSize = CGSize(width: contentWidth, height: contentSize.height + customViewFitSize.height)
         }
         
-        if let count = title?.characters.count, count > 0 {
+        if let count = title?.count, count > 0 {
             let top = contentSize.height == marginEdgeInsets.top ? CGFloat(0.0):CGFloat(10.0)
             let labelFitSize = label.sizeThatFits(CGSize(width: contentSize.width - 40, height: CGFloat.greatestFiniteMagnitude))
-            if labelFitSize.width  <  customViewWidth + 50 && labelFitSize.width < contentSize.width - 30 &&  detailText?.characters.count == 0{
+            if labelFitSize.width  <  customViewWidth + 50 && labelFitSize.width < contentSize.width - 30 &&  detailText?.count == 0{
                 contentSize = CGSize(width: customViewWidth + 80, height: contentSize.height)
             }
             label.frame = CGRect(origin: CGPoint.zero, size: labelFitSize)
             label.center = CGPoint(x: contentSize.width/2, y: top + contentSize.height+labelFitSize.height/2)
             contentSize = CGSize(width: contentSize.width, height: top + contentSize.height + labelFitSize.height)
             
-            if customView == nil &&  detailText?.characters.count == 0{
+            if customView == nil &&  detailText?.count == 0{
                 contentSize = CGSize(width: labelFitSize.width + 50, height: contentSize.height)
             }
         }
-        if let count = detailText?.characters.count, count > 0  {
+        if let count = detailText?.count, count > 0  {
             let top = contentSize.height == marginEdgeInsets.top ? CGFloat(0.0):CGFloat(10.0)
             let detailLabelFitSize = detailLabel.sizeThatFits(CGSize(width: contentSize.width - 40, height: CGFloat.greatestFiniteMagnitude))
             if detailLabelFitSize.width  <  customViewWidth + 50 && detailLabelFitSize.width < contentSize.width - 30{
@@ -278,7 +278,7 @@ open class MGProgressHUD: UIView {
             detailLabel.frame = CGRect(origin: CGPoint.zero, size: detailLabelFitSize)
             detailLabel.center = CGPoint(x: contentSize.width/2, y: top + contentSize.height+detailLabelFitSize.height/2 - 6)
             contentSize = CGSize(width: contentSize.width, height:  top + contentSize.height + detailLabelFitSize.height )
-            if customView == nil &&  title?.characters.count == 0{
+            if customView == nil &&  title?.count == 0{
                 contentSize = CGSize(width: detailLabelFitSize.width + 50, height: contentSize.height)
             }
         }
@@ -298,10 +298,10 @@ open class MGProgressHUD: UIView {
         if customView != nil {
             customView!.center = CGPoint(x: contentSize.width/2, y: customView!.center.y)
         }
-        if  let count = title?.characters.count, count > 0  {
+        if  let count = title?.count, count > 0  {
             label.center = CGPoint(x: contentSize.width/2, y: label.center.y)
         }
-        if let count = detailText?.characters.count, count > 0  {
+        if let count = detailText?.count, count > 0  {
             detailLabel.center = CGPoint(x: contentSize.width/2, y: detailLabel.center.y)
         }
     }
@@ -633,7 +633,7 @@ extension MGProgressHUD {
      */
     @discardableResult
     public class func  showMessageView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showView(toView, iconImages: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
@@ -668,13 +668,13 @@ extension MGProgressHUD {
      */
     @discardableResult
     public class func  showTextAndHiddenView(_ toView:UIView!,message:String?)->MGProgressHUD?{
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showView(toView, iconImages: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: nil)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
             progressView?.contentView.layer.borderColor = UIColor.black.cgColor
             
-            let lineNum = ceil(Double(message!.characters.count)/Double(12.0))
+            let lineNum = ceil(Double(message!.count)/Double(12.0))
             progressView?.hideAfterDelay(true, afterDelay: 0.5*(lineNum - 1.0) + 1.5)
             return progressView
         }
@@ -691,13 +691,13 @@ extension MGProgressHUD {
      */
     @discardableResult
     public class func  showTextAndHiddenView(_ toView:UIView!,message:String?,loationMode:MGLocationMode?)->MGProgressHUD?{
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showView(toView, iconImages: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: loationMode)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
             progressView?.contentView.layer.borderColor = UIColor.black.cgColor
             
-            let lineNum = ceil(Double(message!.characters.count)/Double(12.0))
+            let lineNum = ceil(Double(message!.count)/Double(12.0))
             progressView?.hideAfterDelay(true, afterDelay: 0.5*(lineNum - 1.0) + 1.5)
             return progressView
         }
@@ -773,7 +773,7 @@ extension MGProgressHUD {
     
     @discardableResult
     public class func showTextAndHiddenView(_ message:String?)->MGProgressHUD? {
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showTextAndHiddenView(lastShowWindow(), message: message)
             return progressView
         }
@@ -839,7 +839,7 @@ extension MGProgressHUD {
         if window?.isHidden == true {
             window = UIApplication.shared.keyWindow
         }
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showTextAndHiddenView(window, message: message,afterDelay:afterDelay)
             return progressView
         }
@@ -848,7 +848,7 @@ extension MGProgressHUD {
     
     @discardableResult
     public class func  showTextAndHiddenView(_ toView:UIView!,message:String?,loationMode:MGLocationMode = .center,afterDelay:TimeInterval)->MGProgressHUD?{
-        if let count = message?.characters.count, count > 0 {
+        if let count = message?.count, count > 0 {
             let progressView = showView(toView, iconImages: nil, message: message, messageColor: nil, showBgView: false, detailText: nil, detailColor: nil, loationMode: loationMode)
             progressView?.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
             progressView?.labelColor = UIColor.white
