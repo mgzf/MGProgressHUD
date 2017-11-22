@@ -206,7 +206,7 @@ open class MGProgressHUD: UIView {
     /**
      点击背景事件回调
      */
-    func  tapSelfAction(){
+    @objc func tapSelfAction(){
         if (completionBlock != nil) {
             completionBlock()
         }
@@ -215,7 +215,7 @@ open class MGProgressHUD: UIView {
     /**
      点击Icon或customView事件的回调
      */
-    func selectCustomViewTap(){
+    @objc func selectCustomViewTap(){
         if (selectCustomViewBlock != nil) {
             selectCustomViewBlock()
         }
