@@ -39,7 +39,7 @@ public extension MGProgressHUD {
     
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     @discardableResult
-    public class func  showView(_ toView:UIView!,
+    @objc public class func  showView(_ toView:UIView!,
                                 icon:String?,
                                 message:String?,
                                 messageColor:UIColor?,
@@ -60,7 +60,7 @@ public extension MGProgressHUD {
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     /*! 扩展方法 */
     @discardableResult
-    public class func  showView(_ toView:UIView!,
+    @objc public class func  showView(_ toView:UIView!,
                                 icon:String?,
                                 message:String?,
                                 detailText:String?) ->MGProgressHUD? {
@@ -76,7 +76,7 @@ public extension MGProgressHUD {
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     /*! 扩展方法 */
     @discardableResult
-    public class func  showFillView(_ toView:UIView!,
+    @objc public class func  showFillView(_ toView:UIView!,
                                     icon:String?,
                                     message:String?,
                                     detailText:String?) ->MGProgressHUD? {
@@ -92,7 +92,7 @@ public extension MGProgressHUD {
     
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     @discardableResult
-    public class func  showFillViewAndCallBack(_ toView:UIView!,
+    @objc public class func  showFillViewAndCallBack(_ toView:UIView!,
                                                icon:String?,
                                                message:String?,
                                                detailText:String?,
@@ -110,7 +110,7 @@ public extension MGProgressHUD {
     
     @available(*, deprecated:2.1.11, message:"不推荐使用，请使用iconImage:UIImage")
     @discardableResult
-    public class func showSuccessAndHiddenView(_ toView:UIView!,
+    @objc public class func showSuccessAndHiddenView(_ toView:UIView!,
                                                icon:String?,
                                                message:String?,
                                                detailText:String?) ->MGProgressHUD? {

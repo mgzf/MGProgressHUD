@@ -26,10 +26,10 @@ public class MGProgressConfiguration {
     }
 }
 
-public extension MGProgressHUD {
+@objc public extension MGProgressHUD {
     
     @discardableResult
-    public class func  showLoadingView(_ toView: UIView!, message: String?) -> MGProgressHUD? {
+    @objc public class func  showLoadingView(_ toView: UIView!, message: String?) -> MGProgressHUD? {
         
         
         let progressView = MGProgressHUD.showView(toView,
@@ -49,7 +49,7 @@ public extension MGProgressHUD {
     }
     
     @discardableResult
-    public class func showLoadingFillView(_ toView: UIView!, message: String?) -> MGProgressHUD? {
+    @objc public class func showLoadingFillView(_ toView: UIView!, message: String?) -> MGProgressHUD? {
         
         let progressView = MGProgressHUD.showView(
             toView,
