@@ -308,7 +308,6 @@ open class MGProgressHUD: UIView {
     
     /**
      在一定范围内调整size
-     - returns: <#return value description#>
      */
     func sizeToFit(_ originSize:CGSize,maxWidth:CGFloat)->CGSize{
         let  fitWidth = originSize.width > maxWidth ? maxWidth:originSize.width
@@ -625,11 +624,6 @@ extension MGProgressHUD {
     
     /**
      显示信息,不会自动隐藏 只有手动隐藏额
-     
-     - parameter toView:  <#toView description#>
-     - parameter message: <#message description#>
-     
-     - returns: <#return value description#>
      */
     @discardableResult
     @objc public class func  showMessageView(_ toView:UIView!,message:String?)->MGProgressHUD?{
@@ -645,11 +639,6 @@ extension MGProgressHUD {
     
     /**
      显示信息,不会自动隐藏 只有手动隐藏额
-     
-     - parameter toView:  <#toView description#>
-     - parameter message: <#message description#>
-     
-     - returns: <#return value description#>
      */
     @discardableResult
     @objc public class func  showProgressLoadingView(_ toView:UIView!,message:String?)->MGProgressHUD?{
@@ -661,10 +650,6 @@ extension MGProgressHUD {
     
     /**
      展示信息  几秒后消失
-     - parameter toView:  <#toView description#>
-     - parameter message: <#message description#>
-     
-     - returns: <#return value description#>
      */
     @discardableResult
     @objc public class func  showTextAndHiddenView(_ toView:UIView!,message:String?)->MGProgressHUD?{
@@ -686,8 +671,6 @@ extension MGProgressHUD {
      - parameter toView:  toView description
      - parameter message: message description
      - parameter loationMode: message description
-     
-     - returns: <#return value description#>
      */
     @discardableResult
     public class func  showTextAndHiddenView(_ toView:UIView!,message:String?,loationMode:MGLocationMode?)->MGProgressHUD?{
