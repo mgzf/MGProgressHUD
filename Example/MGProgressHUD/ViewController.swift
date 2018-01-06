@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         var images = [UIImage]()
         for i in 1...36 {
             images.append(UIImage(named: "loading\(i)")!)
@@ -40,8 +41,13 @@ class ViewController: UIViewController {
         MGProgressConfiguration.shared.config { () -> [UIImage]? in
             return images
         }
-        
-//        print(MGProgressConfiguration.shared.images()?.count)
+        MGProgressConfiguration.shared.configFailedImage { () -> UIImage? in
+            return UIImage(named: "failedHUD")
+        }
+        MGProgressConfiguration.shared.configSuccessImage { () -> UIImage? in
+            return UIImage(named: "successHUD")
+        }
+        //        print(MGProgressConfiguration.shared.images()?.count)
         
         
 //        print("UIImage:\(UIImage(named:"error.png"))")

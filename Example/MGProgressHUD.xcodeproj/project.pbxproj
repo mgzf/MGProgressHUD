@@ -13,6 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		959454C01FFF9F5700AAB07F /* failedHUD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959454BE1FFF9F5700AAB07F /* failedHUD@2x.png */; };
+		959454C11FFF9F5700AAB07F /* successHUD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959454BF1FFF9F5700AAB07F /* successHUD@2x.png */; };
 		B98BE247B6F48C273864757E /* Pods_MGProgressHUD_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800B0D88526D2E11A8AED725 /* Pods_MGProgressHUD_Tests.framework */; };
 		FFB3016E2270324E2E32D649 /* Pods_MGProgressHUD_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B230B8FF2B17A11288D156C3 /* Pods_MGProgressHUD_Example.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		64D54F25DB80C4A86676F328 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		800B0D88526D2E11A8AED725 /* Pods_MGProgressHUD_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGProgressHUD_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5EE8DEF79173E23AA012CA /* MGProgressHUD.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MGProgressHUD.podspec; path = ../MGProgressHUD.podspec; sourceTree = "<group>"; };
+		959454BE1FFF9F5700AAB07F /* failedHUD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "failedHUD@2x.png"; sourceTree = "<group>"; };
+		959454BF1FFF9F5700AAB07F /* successHUD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "successHUD@2x.png"; sourceTree = "<group>"; };
 		9F437F72D46AEBA19AC30EFE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A2A7151D9D0FE80CF8F67C00 /* Pods-MGProgressHUD_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGProgressHUD_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B230B8FF2B17A11288D156C3 /* Pods_MGProgressHUD_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGProgressHUD_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				959454BE1FFF9F5700AAB07F /* failedHUD@2x.png */,
+				959454BF1FFF9F5700AAB07F /* successHUD@2x.png */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -250,6 +256,8 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				959454C11FFF9F5700AAB07F /* successHUD@2x.png in Resources */,
+				959454C01FFF9F5700AAB07F /* failedHUD@2x.png in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

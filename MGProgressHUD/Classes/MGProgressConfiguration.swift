@@ -13,9 +13,19 @@ public class MGProgressConfiguration {
     public static let shared: MGProgressConfiguration = MGProgressConfiguration()
     
     private var loadingImagesAction: (() -> [UIImage]?)? = nil
+    private var successImageAction: (() -> UIImage?)?
+    private var failedImageAction: (() -> UIImage?)?
 
     public func config(_ loadingImages: @escaping () -> [UIImage]?){
         loadingImagesAction = loadingImages
+    }
+    
+    public func configSuccessImage(_ successImage: @escaping () -> UIImage?) {
+        successImageAction = successImage
+    }
+    
+    public func configFailedImage(_ failedImage: @escaping () -> UIImage?) {
+        failedImageAction = failedImage
     }
     
     public func images() -> [UIImage]? {
@@ -23,6 +33,22 @@ public class MGProgressConfiguration {
             return loadingImagesAction()
         }
         return nil
+    }
+    
+    public func successImage() -> UIImage? {
+        if let `successImageAction` = successImageAction, let image = successImageAction() {
+            return image
+        }
+        let image = UIImage(named: "ic_whiteCheck", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        return image
+    }
+    
+    public func failedImage() -> UIImage? {
+        if let `failedImageAction` = failedImageAction, let image = failedImageAction() {
+            return image
+        }
+        let image = UIImage(named: "error", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        return image
     }
 }
 

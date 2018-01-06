@@ -794,25 +794,25 @@ extension MGProgressHUD {
     
     @discardableResult
     @objc public class func  showSuccessAndHiddenView(_ toView:UIView!,message:String? = nil)->MGProgressHUD?{
-        let image = UIImage(named: "ic_whiteCheck", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        let image = MGProgressConfiguration.shared.successImage()
         return self.showSuccessAndHiddenView(toView, iconImage: image, message: message, detailText: nil)
     }
     
     @discardableResult
     @objc public class func  showSuccessAndHiddenView(_ message:String? = nil)->MGProgressHUD?{
-        let image = UIImage(named: "ic_whiteCheck", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        let image = MGProgressConfiguration.shared.successImage()
         return self.showSuccessAndHiddenView(lastShowWindow(), iconImage: image, message: message, detailText: nil)
     }
     
     @discardableResult
     @objc public class func  showErrorAndHiddenView(_ toView:UIView!,message:String? = nil)->MGProgressHUD?{
-        let image = UIImage(named: "error", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        let image = MGProgressConfiguration.shared.failedImage()
         return self.showSuccessAndHiddenView(toView, iconImage: image, message: message, detailText: nil)
     }
     
     @discardableResult
     @objc public class func  showErrorAndHiddenView(_ message:String? = nil)->MGProgressHUD?{
-        let image = UIImage(named: "error", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil)
+        let image = MGProgressConfiguration.shared.failedImage()
         return self.showSuccessAndHiddenView(lastShowWindow(), iconImage:image, message: message, detailText: nil)
     }
     
