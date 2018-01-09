@@ -12,6 +12,8 @@ public class MGProgressConfiguration {
     
     public static let shared: MGProgressConfiguration = MGProgressConfiguration()
     
+    public var animationMHz: Double = 0.03
+    
     private var loadingImagesAction: (() -> [UIImage]?)? = nil
     private var successImageAction: (() -> UIImage?)?
     private var failedImageAction: (() -> UIImage?)?

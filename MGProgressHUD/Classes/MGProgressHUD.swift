@@ -322,7 +322,7 @@ open class MGProgressHUD: UIView {
     func doAnimation(){
         //设置动画总时间
         if let imageView = customView as? UIImageView, let count = imageView.animationImages?.count, count > 0{
-            imageView.animationDuration = Double(imageView.animationImages!.count) * 0.03
+            imageView.animationDuration = Double(imageView.animationImages!.count) * MGProgressConfiguration.shared.animationMHz
             //设置重复次数,0表示不重复
             imageView.animationRepeatCount=0;
             imageView.startAnimating()

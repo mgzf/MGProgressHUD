@@ -31,10 +31,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MGProgressConfiguration.shared.animationMHz = 0.07
         
         
         var images = [UIImage]()
-        for i in 1...36 {
+        for i in 1...12 {
             images.append(UIImage(named: "loading\(i)")!)
         }
 
