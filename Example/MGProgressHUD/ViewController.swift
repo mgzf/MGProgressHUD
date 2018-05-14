@@ -27,21 +27,22 @@ class ViewController: UIViewController {
                                            "hiddenAll",
                                            "showDelayText",
                                            "showLoading",
-                                           "showFillLoading"]
+                                           "showFillLoading",
+                                           "customView"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MGProgressConfiguration.shared.animationMHz = 0.07
         
         
-        var images = [UIImage]()
-        for i in 1...12 {
-            images.append(UIImage(named: "loading\(i)")!)
-        }
-
-        MGProgressConfiguration.shared.config { () -> [UIImage]? in
-            return images
-        }
+//        var images = [UIImage]()
+//        for i in 1...12 {
+//            images.append(UIImage(named: "loading\(i)")!)
+//        }
+//
+//        MGProgressConfiguration.shared.config { () -> [UIImage]? in
+//            return images
+//        }
         MGProgressConfiguration.shared.configFailedImage { () -> UIImage? in
             return UIImage(named: "failedHUD")
         }
@@ -92,9 +93,20 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
         case 5:
             MGProgressHUD.showTextAndHiddenView("延迟了3s 消失", afterDelay: 3)
         case 6:
-            MGProgressHUD.showLoadingView(self.view, message: "加载中")
+            let hud = MGProgressHUD.showLoadingView(self.view, message: "加载中fsdfdfdfdfdfdfdfdf")
+            hud?.selectCloseBlock = {
+                MGProgressHUD.hiddenAllhubToView(self.view, animated: true)
+            }
         case 7:
             MGProgressHUD.showLoadingFillView(self.view, message: "加载中")
+        case 8:
+            let backView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            backView.backgroundColor = UIColor.brown
+            let hud = MGProgressHUD.showCustomView(self.view, customView: backView, message: "加载中adsdasd", messageColor: UIColor.black, showBgView: false, detailColor: UIColor.gray, loationMode: MGLocationMode.center)
+            hud?.marginEdgeInsets = UIEdgeInsets(top: 25, left: 0, bottom: 15, right: 0)
+            hud?.selectCloseBlock = {
+                MGProgressHUD.hiddenAllhubToView(self.view, animated: true)
+            }
         default:
             return
         }

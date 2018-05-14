@@ -115,7 +115,7 @@ open class MGProgressHUD: UIView {
     /*! content显示出来的位置 */
     public var customMode:MGCustomMode? = MGCustomMode.default{
         didSet{
-            if customMode == MGCustomMode.progress {
+            if customMode == .progress {
                 let view1 = CircleDataView(frame:CGRect(x: 0, y: 0, width: 50, height: 50))
                 view1.backgroundColor = UIColor.clear
                 self.customView = view1;
@@ -139,12 +139,33 @@ open class MGProgressHUD: UIView {
     /*! 点击背景后的回调 */
     @objc public var selectCustomViewBlock : (() ->())!
     
+    /*!当(customMode == .withCloseBtn) 点击close后的回调 */
+    @objc public var selectCloseBlock : (() ->())? {
+        didSet {
+            if self.closeBtn.superview != nil {
+                self.closeBtn.removeFromSuperview()
+            }
+            if selectCloseBlock != nil {
+                self.contentView.addSubview(self.closeBtn)
+                layoutSubviews()
+            }
+        }
+    }
+    
     /*! manualHidden为true时 调用hiddenAllhubToView时不会消失 只有手动调用hiddenHubView*/
     @objc public var manualHidden = false
     
     @objc public var contentView:UIView!
     @objc public var label:UILabel!
     @objc public var detailLabel:UILabel!
+    
+    lazy var closeBtn: UIButton = {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        button.setImage(UIImage(named: "hud_Close", in: Bundle(for: MGProgressHUD.self), compatibleWith: nil), for: .normal)
+        button.addTarget(self, action: #selector(tapCloseAction), for: .touchUpInside)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -218,6 +239,15 @@ open class MGProgressHUD: UIView {
     @objc func selectCustomViewTap(){
         if (selectCustomViewBlock != nil) {
             selectCustomViewBlock()
+        }
+    }
+    
+    /**
+     点击closeBtn事件回调
+     */
+    @objc func tapCloseAction(){
+        if let `selectCloseBlock` = selectCloseBlock {
+            selectCloseBlock()
         }
     }
     
@@ -303,6 +333,10 @@ open class MGProgressHUD: UIView {
         }
         if let count = detailText?.count, count > 0  {
             detailLabel.center = CGPoint(x: contentSize.width/2, y: detailLabel.center.y)
+        }
+        
+        if selectCloseBlock != nil, let closeView = closeBtn.superview {
+            closeBtn.center = CGPoint(x: closeView.frame.width - closeBtn.frame.width/2 - 3, y: closeBtn.frame.height/2 + 3)
         }
     }
     
