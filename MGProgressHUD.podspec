@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGProgressHUD"
-  s.version      = "3.1.2"
+  s.version      = "3.2.0"
   s.summary      = "蘑菇租房正在使用的ProgressHUD。"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                      蘑菇租房自定义正在使用的ProgressHUD，包括常用的HUD功能。
+                      蘑菇租房自定义正在使用的ProgressHUD，包括常用的HUD功能
                    DESC
 
   s.homepage     = "https://github.com/mgzf/MGProgressHUD"
