@@ -39,9 +39,9 @@ class CircleDataView: UIView {
         //第一段文本
         
         let font:UIFont! = UIFont.systemFont(ofSize: fontSize)
-        let textAttributes: [NSAttributedString.Key: AnyObject] = [
-            NSAttributedString.Key.foregroundColor : UIColor.black,
-            NSAttributedString.Key.font :font
+        let textAttributes: [NSAttributedStringKey: AnyObject] = [
+            NSAttributedStringKey.foregroundColor : UIColor.black,
+            NSAttributedStringKey.font :font
         ]
         
         
