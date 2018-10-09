@@ -177,7 +177,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				EF723D001EFD4A0D75A56665 /* [CP] Embed Pods Frameworks */,
-				BCC7B5EB507048C8E47DA63C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,7 +196,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				5EE084C37E3A9EC60EDC786F /* [CP] Embed Pods Frameworks */,
-				854789911B1E771A264E3E3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,7 +294,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Tests/Pods-MGProgressHUD_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MGProgressHUD_Tests/Pods-MGProgressHUD_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -307,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Tests/Pods-MGProgressHUD_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MGProgressHUD_Tests/Pods-MGProgressHUD_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E6949197AAB64FAC6CCF365 /* [CP] Check Pods Manifest.lock */ = {
@@ -328,51 +326,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		854789911B1E771A264E3E3F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Tests/Pods-MGProgressHUD_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCC7B5EB507048C8E47DA63C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-resources.sh",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/error@2x.png",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/error@3x.png",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/ic_whiteCheck@2x.png",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/ic_whiteCheck@3x.png",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/空数据@2x.png",
-				"${PODS_ROOT}/../../MGProgressHUD/Assets/空数据@3x.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EF723D001EFD4A0D75A56665 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MGProgressHUD/MGProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -381,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MGProgressHUD_Example/Pods-MGProgressHUD_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
