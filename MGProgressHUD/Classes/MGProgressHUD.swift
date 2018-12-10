@@ -852,12 +852,8 @@ extension MGProgressHUD {
     
     @discardableResult
     @objc public class func  showTextAndHiddenView(_ message:String? = nil,afterDelay:TimeInterval)->MGProgressHUD?{
-        var window = UIApplication.shared.windows.last
-        if window?.isHidden == true {
-            window = UIApplication.shared.keyWindow
-        }
         if let count = message?.count, count > 0 {
-            let progressView = showTextAndHiddenView(window, message: message,afterDelay:afterDelay)
+            let progressView = showTextAndHiddenView(lastShowWindow(), message: message,afterDelay:afterDelay)
             return progressView
         }
         return nil

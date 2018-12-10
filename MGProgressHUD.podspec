@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGProgressHUD"
-  s.version      = "3.2.0"
+  s.version      = "3.2.1"
   s.summary      = "蘑菇租房正在使用的ProgressHUD。"
 
   # This description is used to generate tags and improve search results.
